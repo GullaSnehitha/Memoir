@@ -4,24 +4,26 @@
   <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Babylonica' rel='stylesheet'>
- <style>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
     body {
       margin: 0;
       padding: 0;
-      
     }
 
     header {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgb(9, 54, 108);
+      background-color: #ECC5C0; /* Set the background color and opacity */
       padding: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       transition: background-color 0.3s;
+      z-index: 2; /* Ensure the header appears in front */
+      color: black; /* Set the text color in the header */
     }
 
     header.scrolled {
@@ -29,12 +31,12 @@
     }
 
     img.logo {
-      max-width: 5%;
-      max-height: 5%;
+      max-width: 4%;
+      max-height: 4%;
     }
 
     h1 {
-      color: rgb(224, 224, 224);
+      color: black; /* Set the text color within the header */
       margin: 0;
     }
 
@@ -42,48 +44,97 @@
       display: fixed;
     }
 
-    nav h3 {
+    nav h2 {
       margin: 0;
       margin-right: 20px;
     }
 
-    .container {
+    nav h2 a {
+      color: black; /* Set the text color in the navigation links */
+      text-decoration: none;
+    }
+
+    .content {
+      margin-top: 0; /* Remove the margin between header and content */
       height: 100vh;
       width: 100vw;
       overflow: hidden;
+      background-image: url('../assets/bg.png'); /* Set the background image URL */
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.8; /* Set the opacity of the background image */
     }
 
-    .container img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      overflow: hidden;
-    }
     h1 {
-      font-family: 'Arizonia';font-size: 60px;
+      font-family: 'Arizonia';
+      font-size: 45px;
+    }
+
+    .grid-container {
+      position: absolute;
+      top: 20vh; /* Adjust the desired distance from the top */
+      left: 10vh;
+      width: 50%;
+      height: 50%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10;
+      z-index: 1;
+    }
+
+    .grid-container > div:nth-child(1) {
+      background-color:lightpink /* Set color for first grid item */
+        
+    }
+
+    .grid-container > div:nth-child(2) {
+      background-color:rgb(100, 208, 247) /* Set color for second grid item */
+    }
+
+    .grid-container > div:nth-child(3) {
+      background-color: rgb(100, 208, 247)  /* Set color for third grid item */
+    }
+
+    .grid-container > div:nth-child(4) {
+      background-color: rgb(185, 157, 243);  /* Set color for fourth grid item */
+    }
+
+    .grid-container > div {
+      text-align: center;
+      padding: 0px;
+      padding-top: 20%;
+      font-size: 30px;
+      border: 2px solid black; /* Add border to each div */
     }
   </style>
 </head>
-<body background="">
+<body>
   <header>
-    
     <img src="../../assets/logo1.png" alt="Logo" class="logo" style="height: 70%; width: 70%;">
-    <h1>Memoir</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" placeholder="Search..">
+    <h1 style="color: black;">Memoir</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" placeholder="Search..">&nbsp;&nbsp;
+    <i class="material-icons">add</i>
     
     <nav>
-      
-      <h3><a routerLink="/aboutus">About Us</a></h3>
-      <h3><a routerLink="/makeUp">MakeUp</a></h3>
-      <h3><a routerLink="/skincare">Skin Care</a></h3>
-      <h3><a routerLink="/haircare">Hair Care</a></h3>
-      <h3><a routerLink="/myspace">My Space</a></h3>
-      
+      <h2><a routerLink="/aboutus">About Us</a></h2>
+      <h2><a routerLink="/makeUp">MakeUp</a></h2>
+      <h2><a routerLink="/skincare">Skin Care</a></h2>
+      <h2><a routerLink="/haircare">Hair Care</a></h2>
+      <h2><a routerLink="/myspace">My Space</a></h2>
     </nav>
-    
   </header>
 
+  
+
+  <div class="content">
+    <!-- Your content here -->
+  </div>
+  <div class="grid-container">
+    <div>Hair</div>
+    <div>Skin</div>
+    <div>Body</div>
+    <div>Nails</div>
+  </div>
 </body>
 </html>
-
-<router-outlet></router-outlet>

@@ -1,0 +1,31 @@
+header {
+    background-color: #001d61;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5px;
+    text-align: center;
+    padding-bottom: 10px;
+    flex-grow: 1;
+    overflow:hidden ;
+    
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 70px;
+  }
+  p{
+    color: #fff;
+    text-align: left;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
